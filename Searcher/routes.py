@@ -3,4 +3,4 @@ from flask import render_template, send_from_directory, url_for, request, redire
 
 @app.route('/')
 def home():
-    return "<h1> this is a test</h1>"
+    return render_template('home.html')
