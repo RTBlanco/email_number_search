@@ -24,7 +24,7 @@ web_html = session.get('https://www.transparent.com/')
 web_html.html.render()
 
 
-web_text = 'ronnytoribio1@hotmail.com ronnytoribio2@outlook.com rtblanco66@gmail.com ' #web_html.text
+web_text = web_html.text
 matches = []
 for groups in phone_regex.findall(web_text):
     phone_num = '-'.join([groups[1],groups[3],groups[5]])
