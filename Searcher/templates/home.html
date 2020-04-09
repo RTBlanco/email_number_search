@@ -4,12 +4,19 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">Phone number and Email scraper</h1>
-                <p class="lead">Just enter the the website and it will scrape all the <strong>Phone Numbers</strong> and <strong>Emails</strong> in it </p>
-                <ul class="list-unstyled">
-                    <li>Bootstrap 4.3.1</li>
-                    <li>jQuery 3.4.1</li>
-                </ul>
+                <!--<p class="lead">Just enter the the website and it will scrape all the <strong>Phone Numbers</strong> and <strong>Emails</strong> in it </p>-->
+                <img src="{{ url_for('static', filename='LOGO.png') }}" alt="logo image">
+                <div class="col">
+                    <form action="">
+                        <label for="">Just enter the the website and it will scrape all the <strong>Phone Numbers</strong> and <strong>Emails</strong> in it </label>    
+                        <br>
+                        <input type="url">
+                        <br>
+                        <input class="button" type="submit" value="Search">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+    <!-- regex for URLS "(https?:\/\/)?(www\.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)|(https?:\/\/)?(www\.)?(?!ww)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"-->
 {% endblock content %}
