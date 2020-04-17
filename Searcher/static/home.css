@@ -1,3 +1,7 @@
 img {
     width: 25%;
 }
+
+input.btn {
+    margin-top: 10px;
+}
