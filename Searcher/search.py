@@ -23,7 +23,9 @@ def scraper(link):
     session = HTMLSession()
     web_html = session.get(link)  
     # letting the Javascript render first 
-    web_html.html.render()
+    #TODO: look into why 
+    # for some reason the web_html.html.render() crashes the search
+    # web_html.html.render()
     web_text = web_html.text
 
     phone_matches = phone_regex.findall(web_text)
@@ -48,9 +50,9 @@ def scraper(link):
 
     return new_phone_matches, new_email_matches
 
-phone, email = scraper('https://www.transparent.com')
+# phone, email = scraper('https://www.transparent.com')
 
-for number in phone:
-    print(number)
-for mail in email:
-    print(mail)
+# for number in phone:
+#     print(number)
+# for mail in email:
+#     print(mail)

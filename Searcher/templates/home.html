@@ -8,10 +8,10 @@
                 <!--Try to see if you can make this image natually small so it does not take so long to load !-->
                 <img src="{{ url_for('static', filename='LOGO.png') }}" alt="logo image">
                 <div class="col">
-                    <form class="form-group" action="">
+                    <form class="form-group" action="/home" method="POST">
                         <label for="">Just enter the the website and it will scrape all the <strong>Phone Numbers</strong> and <strong>Emails</strong> in it </label>    
                         <br>
-                        <input class="form-control center" type="url">
+                        <input class="form-control" type="url" name="url">
                         <br>
                         <input class="btn btn-dark" type="submit" value="Search">
                     </form>
