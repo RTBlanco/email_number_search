@@ -10,6 +10,6 @@ def home():
         phone, email = scraper(str(url))
         if len(phone) > 0 or len(email) > 0:
             return render_template('home.html', phones=phone, emails=email, data=True)
-        else:
+        else:            
             return render_template('home.html',data=False, url=url)
-    return render_template('home.html')
+    return render_template('home.html', data=None)

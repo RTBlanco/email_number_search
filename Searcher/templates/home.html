@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-    {% else %}
+    {% elif data == False %}
         <div class="col-lg-12 text-center">
             <img id="oops" src="{{ url_for('static', filename='sweating.gif') }}" alt="sweating">
             <h3>No phone numbers and or emails where found </h3>
