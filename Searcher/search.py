@@ -1,7 +1,6 @@
 import re
 from requests_html import HTMLSession
-#TODO: Rethink of a better wayt to search the phone number !
-#TODO: Also might be a good idea to looking into the email as well 
+ 
 
 phone_regex = re.compile(r'''(
     (\d{3}|\(\d{3}\))?      # area code
@@ -21,16 +20,12 @@ email_regex = re.compile(r'''(
 
 def scraper(link):
     session = HTMLSession()
-    web_html = session.get(link)  
-    # letting the Javascript render first 
-    #TODO: look into why 
-    # for some reason the web_html.html.render() crashes the search
-    # web_html.html.render()
+    web_html = session.get(link)
     web_text = web_html.text
 
     phone_matches = phone_regex.findall(web_text)
-    #TODO: Try a list comprehension 
-    # removing all the the blank lists
+     
+    # removing all the the blank items
     new_phone_matches = []
     for found_phones in phone_matches:
         for phone in found_phones:
@@ -48,11 +43,7 @@ def scraper(link):
             else:
                 del email
 
+    # removes duplicates  
+    new_email_matches = list(dict.fromkeys(new_email_matches))
+    new_phone_matches = list(dict.fromkeys(new_phone_matches))
     return new_phone_matches, new_email_matches
-
-# phone, email = scraper('https://www.transparent.com')
-
-# for number in phone:
-#     print(number)
-# for mail in email:
-#     print(mail)

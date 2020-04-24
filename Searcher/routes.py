@@ -5,17 +5,11 @@ from flask import render_template, send_from_directory, url_for, request, redire
 @app.route('/')
 @app.route('/home', methods=['GET','POST'])
 def home():
-    url = request.form.get('url')
-    phone, email = scraper(str(url))
-    if len(phone) > 0:
-        for number in phone:
-            print(number)
-    else:
-        print('Nothing')
-
-    if len(email) > 0: 
-        for mail in email:
-            print(mail)
-    else:
-        print('Nothing')
+    if request.method == 'POST':
+        url = request.form.get('url')
+        phone, email = scraper(str(url))
+        if len(phone) > 0 or len(email) > 0:
+            return render_template('home.html', phones=phone, emails=email, data=True)
+        else:
+            return render_template('home.html',data=False, url=url)
     return render_template('home.html')

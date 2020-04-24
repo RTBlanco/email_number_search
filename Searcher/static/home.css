@@ -5,3 +5,10 @@ img {
 input.btn {
     margin-top: 10px;
 }
+
+
+@media screen and (max-width: 767px) {
+    #oops {
+       width: 40vh; 
+    }
+}
