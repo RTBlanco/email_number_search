@@ -13,4 +13,16 @@ def home():
         else:            
             return render_template('home.html',data=False, url=url)
     return render_template('home.html', data=None)
-    #return redirect('/')
+    
+
+@app.route('/About')
+def about():
+    return render_template('about.html')
+
+@app.route('/Services')
+def services():
+    return render_template('services.html')
+
+@app.route('/Contact')
+def contact():
+    return render_template('contact.html')
