@@ -13,3 +13,4 @@ def home():
         else:            
             return render_template('home.html',data=False, url=url)
     return render_template('home.html', data=None)
+    #return redirect('/')
