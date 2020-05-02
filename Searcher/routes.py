@@ -1,5 +1,5 @@
 from Searcher import app
-from Searcher.search import scraper
+from Searcher.scraper import Scraper
 from flask import render_template, send_from_directory, url_for, request, redirect
 
 @app.route('/')
@@ -7,9 +7,9 @@ from flask import render_template, send_from_directory, url_for, request, redire
 def home():
     if request.method == 'POST':
         url = request.form.get('url')
-        phone, email = scraper(str(url))
-        if len(phone) > 0 or len(email) > 0:
-            return render_template('home.html', phones=phone, emails=email, data=True)
+        info = Scraper(str(url))
+        if len(info.numbers()) > 0 or len(info.emails()) > 0:
+            return render_template('home.html', phones=info.numbers(), emails=info.emails(), data=True)
         else:            
             return render_template('home.html',data=False, url=url)
     return render_template('home.html', data=None)
