@@ -18,5 +18,9 @@ def home():
 @app.route('/contact', methods=['GET','POST'])
 def contact():
     if request.method == 'POST':
-        print(request.form)
+        # TODO:send you self an email 
+        print(request.form.get('name'))
+        print(request.form.get('email'))
+        print(request.form.get('subject'))
+        print(request.form.get('message'))
     return render_template('contact.html')
