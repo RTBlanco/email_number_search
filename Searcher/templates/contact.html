@@ -8,17 +8,17 @@
             <a href="https://github.com/RTBlanco" target="_blank"><img src="{{ url_for('static', filename='github-logo.png') }}" alt=""></a>
             <form class="form-group" action="/contact" method="post">
                 <!-- name  -->
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control contact" name="name">
                 <br>
                 <!-- email -->
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control contact" name="email">
                 <br>
                 <!-- subject -->
-                <input type="text" class="form-control" name="subject">
+                <input type="text" class="form-control contact" name="subject">
                 <br>
                 <!-- message -->
                 <!-- user a text editor of sorts -->
-                <textarea class="form-control" name="message"cols="30" rows="10"></textarea>
+                <textarea class="form-control contact" name="message"cols="30" rows="10"></textarea>
                 <!-- button -->
                 <input class="btn btn-dark" type="submit" value="Send">
             </form>
