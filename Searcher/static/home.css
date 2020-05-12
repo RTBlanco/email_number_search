@@ -1,14 +1,30 @@
 
 .form-control.contact {
-    width: 30%;
-    margin-left: 35%;
+    width: 40%;
+    margin-left: 30%;
 }
 
 input.btn {
     margin-top: 10px;
 }
 
+h1.contact {
+   margin-top: 2.5rem;
+   margin-bottom: 2.5rem;
+    
+}
 
+a.linked-in {
+    margin-right: 20vh;
+}
+
+a.linked-in img {
+    margin-bottom: 2.5rem;
+}
+
+a.github img {
+    margin-bottom: 2.5rem;
+}
 @media screen and (max-width: 767px) {
     #oops {
        width: 40vh; 
@@ -17,5 +33,9 @@ input.btn {
     .form-control.contact {
         width: 100%;
         margin-left: 0%;
+    }
+
+    a.linked-in {
+        margin-right: 16vh;
     }
 }
