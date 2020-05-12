@@ -1,4 +1,9 @@
 
+.form-control {
+    width: 30%;
+    margin-left: 35%;
+}
+
 input.btn {
     margin-top: 10px;
 }
@@ -7,5 +12,10 @@ input.btn {
 @media screen and (max-width: 767px) {
     #oops {
        width: 40vh; 
+    }
+
+    .form-control {
+        width: 100%;
+        margin-left: 0%;
     }
 }
