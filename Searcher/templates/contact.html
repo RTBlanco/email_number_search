@@ -1,6 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
-    <a href="https://www.linkedin.com/in/ronny-toribio-blanco-137841128/" target="_blank"><img src="{{ url_for('static', filename='linkedin-logo.png') }}" alt=""></a>
-    <a href="https://github.com/RTBlanco" target="_blank"><img src="{{ url_for('static', filename='github-logo.png') }}" alt=""></a>
-    <a href="mailto:rtblanco66@gmail.com"><img src="{{ url_for('static', filename='envelopes.png') }}" alt=""></a>
+<div class="container">
+    <div class="row">
+        <div class="col-lg text-center">
+            <h1>Contact!</h1>
+            <div class="row">
+                <a href="https://www.linkedin.com/in/ronny-toribio-blanco-137841128/" target="_blank"><img src="{{ url_for('static', filename='linkedin-logo.png') }}" alt=""></a>
+                <a href="https://github.com/RTBlanco" target="_blank"><img src="{{ url_for('static', filename='github-logo.png') }}" alt=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">               
+    <div class="row">
+        <div class="col text-center">
+            <form class="form-group" action="/contact" method="post">
+                <!-- name  -->
+                <input type="text" class="form-control" name="name">
+                <br>
+                <!-- email -->
+                <input type="email" class="form-control" name="email">
+                <br>
+                <!-- subject -->
+                <input type="text" class="form-control" name="subject">
+                <br>
+                <!-- message -->
+                <!-- user a text editor of sorts -->
+                <textarea class="form-control" name="message"cols="30" rows="10"></textarea>
+            </form>
+        </div>
+    </div>
+</div> 
+                    <!-- <a href="mailto:rtblanco66@gmail.com"><img src="{{ url_for('static', filename='envelopes.png') }}" alt=""></a> -->
+                    <!-- TODO: Add form to send email  -->
 {% endblock content %}
