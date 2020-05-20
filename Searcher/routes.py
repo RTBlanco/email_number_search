@@ -1,3 +1,4 @@
+import smtplib, ssl
 from Searcher import app
 from Searcher.scraper import Scraper
 from flask import render_template, send_from_directory, url_for, request, redirect
@@ -18,9 +19,17 @@ def home():
 @app.route('/contact', methods=['GET','POST'])
 def contact():
     if request.method == 'POST':
-        # TODO:send you self an email 
-        print(request.form.get('name'))
-        print(request.form.get('email'))
-        print(request.form.get('subject'))
-        print(request.form.get('message'))
+        # TODO:send you self an email
+        user_email = request.form.get('email')
+        message = f"Subject:{request.form.get('subject')} \n\nName: {request.form.get('name')}\nEmail: {request.form.get('email')}\nMessage: {request.form.get('message')}" 
+
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL('smtp.gmail.com', port=465, context=context) as server:
+            server.login('emailphonesearch@gmail.com', 'testtest1Q')
+            server.sendmail(user_email,'emailphonesearch@gmail.com' , message)
+
+        # print(request.form.get('name'))
+        # print(request.form.get('email'))
+        # print(request.form.get('subject'))
+        # print(request.form.get('message'))
     return render_template('contact.html')
