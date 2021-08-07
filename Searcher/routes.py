@@ -28,8 +28,4 @@ def contact():
             server.login('emailphonesearch@gmail.com', 'testtest1Q')
             server.sendmail(user_email,'emailphonesearch@gmail.com' , message)
 
-        # print(request.form.get('name'))
-        # print(request.form.get('email'))
-        # print(request.form.get('subject'))
-        # print(request.form.get('message'))
     return render_template('contact.html')
