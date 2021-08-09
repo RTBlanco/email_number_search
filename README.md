@@ -1,5 +1,5 @@
 # email_number_search
-A simple web app that searchs for emails and passwords from a given website 
+A simple web app that searches for emails and passwords from a given website 
 
 <img src="https://media.giphy.com/media/vA7VraF8W12F7zI9GL/giphy.gif" />
 
